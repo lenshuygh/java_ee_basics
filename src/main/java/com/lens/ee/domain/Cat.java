@@ -5,6 +5,10 @@ public class Cat {
     int age;
     String color;
 
+    public Cat(){
+
+    }
+
     public Cat(String name, int age, String color) {
         this.name = name;
         this.age = age;
@@ -33,5 +37,14 @@ public class Cat {
 
     public void setColor(String color) {
         this.color = color;
+    }
+
+    @Override
+    public String toString() {
+        return "Cat{" +
+                "name='" + name + '\'' +
+                ", age=" + age +
+                ", color='" + color + '\'' +
+                '}';
     }
 }
