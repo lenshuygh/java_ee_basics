@@ -24,9 +24,6 @@ public class DataService {
     }
 
     public List getCatList(){
-        for(Cat c : catList){
-            System.out.println(c);
-        }
         return catList;
     }
 }
