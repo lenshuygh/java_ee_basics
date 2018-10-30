@@ -4,11 +4,15 @@ import com.lens.ee.domain.Cat;
 import org.slf4j.Logger;
 
 import javax.inject.Inject;
+import javax.inject.Named;
+import javax.inject.Singleton;
 import java.util.ArrayList;
 import java.util.List;
 
+@Named
+@Singleton
 public class DataService {
-    static List<Cat> catList = new ArrayList<>();
+    public List<Cat> catList = new ArrayList<>();
 
     @Inject
     private Logger logger;
