@@ -1,6 +1,7 @@
 package com.lens.ee.domain;
 
 public class Cat {
+    int id;
     String name;
     int age;
     String color;
@@ -9,10 +10,19 @@ public class Cat {
 
     }
 
-    public Cat(String name, int age, String color) {
+    public Cat(int id,String name, int age, String color) {
+        this.id = id;
         this.name = name;
         this.age = age;
         this.color = color;
+    }
+
+    public int getId() {
+        return id;
+    }
+
+    public void setId(int id) {
+        this.id = id;
     }
 
     public String getName() {
@@ -42,7 +52,8 @@ public class Cat {
     @Override
     public String toString() {
         return "Cat{" +
-                "name='" + name + '\'' +
+                "id=" + id +
+                ", name='" + name + '\'' +
                 ", age=" + age +
                 ", color='" + color + '\'' +
                 '}';

@@ -19,7 +19,7 @@ public class JsonHello {
     @Path("cat")
     @Produces({MediaType.APPLICATION_JSON})
     public Object getObject(){
-        Cat cat = new Cat("Thor",14,"Black");
+        Cat cat = new Cat(1,"Thor",14,"Black");
         return cat;
     }
 }

@@ -8,6 +8,7 @@ import javax.inject.Named;
 import javax.inject.Singleton;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Optional;
 
 @Named
 @Singleton
@@ -18,7 +19,7 @@ public class DataService {
     private Logger logger;
 
     public void bootstrapData(){
-        Cat cat = new Cat("Smiegel",16,"Black and white");
+        Cat cat = new Cat(0,"Smiegel",16,"Black and white");
         catList.add(cat);
     }
 
@@ -29,5 +30,19 @@ public class DataService {
 
     public List getCatList(){
         return catList;
+    }
+
+    public Cat getCat(int id) throws Exception {
+        Optional<Cat> catOptional = null;
+        for(Cat c : catList){
+            if(c.getId() == id) {
+                catOptional = Optional.of(c);
+            }
+        }
+        if(catOptional.isPresent()){
+            return catOptional.get();
+        }else{
+            throw new Exception("Searched element not found");
+        }
     }
 }

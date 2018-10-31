@@ -33,5 +33,20 @@ public class DataRest {
         return "ok";
     }
 
+    @GET
+    @Produces({MediaType.APPLICATION_JSON})
+    @Path("cat/{id}")
+    public Cat getCat(@PathParam("id") int id) throws Exception {
+        Cat c =  dataService.getCat(id);
+        return c;
+    }
+
+    /*
+    @DELETE
+    @PathParam("id")
+    public void deleteCat(int id){
+
+    }*/
+
 
 }
