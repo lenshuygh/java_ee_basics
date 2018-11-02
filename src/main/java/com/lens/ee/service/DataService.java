@@ -45,4 +45,9 @@ public class DataService {
             throw new Exception("Searched element not found");
         }
     }
+
+    public void deleteCat(int id) throws Exception {
+        Cat c = getCat(id);
+        catList.remove(c);
+    }
 }

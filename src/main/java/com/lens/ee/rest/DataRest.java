@@ -31,6 +31,7 @@ public class DataRest {
         logger.debug("Cat -> " + cat);
         dataService.addCatElement(cat);
         return "ok";
+
     }
 
     @GET
@@ -41,12 +42,10 @@ public class DataRest {
         return c;
     }
 
-    /*
+
     @DELETE
-    @PathParam("id")
-    public void deleteCat(int id){
-
-    }*/
-
-
+    @Path("cat/{id}")
+    public void deleteCat(@PathParam("id") int id) throws Exception{
+        dataService.deleteCat(id);
+    }
 }
