@@ -50,4 +50,13 @@ public class DataService {
         Cat c = getCat(id);
         catList.remove(c);
     }
+
+    public int updateCat(int id, Cat newCat) throws Exception {
+        Cat originalCat = getCat(id);
+        logger.debug("cat found to update -> " + originalCat);
+        logger.debug("New cat data -> " + newCat);
+        catList.remove(originalCat);
+        catList.add(newCat);
+        return 1;
+    }
 }

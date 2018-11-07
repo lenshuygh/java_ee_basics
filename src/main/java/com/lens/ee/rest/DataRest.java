@@ -48,4 +48,12 @@ public class DataRest {
     public void deleteCat(@PathParam("id") int id) throws Exception{
         dataService.deleteCat(id);
     }
+
+    @PUT
+    @Path("cat/{id}")
+    @Consumes({MediaType.APPLICATION_JSON})
+    public int update(@PathParam("id") int id,Cat cat) throws Exception{
+        int result = dataService.updateCat(id,cat);
+        return result;
+    }
 }
